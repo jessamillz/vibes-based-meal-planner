@@ -1,0 +1,17 @@
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment variables
+server/.env
+client/.env
+
+# Ignore build files
+client/dist/
+server/build/
+
+# Ignore logs
+server/logs/
+*.log
+
+# Ignore system files
+.DS_Store
