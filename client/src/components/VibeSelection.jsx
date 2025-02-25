@@ -1,4 +1,6 @@
 // client/src/components/VibeSelection.jsx
+import { useEffect, useState } from 'react';
+import { supabase } from '../supabaseClient';
 import PropTypes from 'prop-types';
 import './VibeSelection.css'; // Import external styles
 
@@ -12,11 +14,26 @@ const vibes = [
 ];
 
 const VibeSelection = ({ onVibeSelect }) => {
+  const [vibes, setVibes] = useState([]);
+  
+  useEffect(() => {
+    const fetchVibes = async () => {
+      const { data, error } = await supabase.from('vibes').select('*');
+      if (error) {
+        console.error('Error fetching vibes:', error);
+      } else {
+        setVibes(data);
+      }
+    };
+
+    fetchVibes();
+  }, []);
+
   return (
     <div className="vibe-grid">
       {vibes.map((vibe) => (
         <button
-          key={vibe.name}
+          key={vibe.id}
           className={`vibe-card ${vibe.colorClass}`}
           onClick={() => onVibeSelect(vibe.name)}
         >
