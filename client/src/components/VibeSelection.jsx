@@ -4,17 +4,9 @@ import { supabase } from '../supabaseClient';
 import PropTypes from 'prop-types';
 import './VibeSelection.css'; // Import external styles
 
-const vibes = [
-  { name: "Cozy", emoji: "🧣", colorClass: "vibe-cozy" },
-  { name: "Adventurous", emoji: "🌄", colorClass: "vibe-adventurous" },
-  { name: "Healthy", emoji: "🥗", colorClass: "vibe-healthy" },
-  { name: "Comfort Food", emoji: "🍕", colorClass: "vibe-comfort" },
-  { name: "Quick & Easy", emoji: "⚡", colorClass: "vibe-quick" },
-  { name: "Fancy", emoji: "🍷", colorClass: "vibe-fancy" }
-];
-
 const VibeSelection = ({ onVibeSelect }) => {
   const [vibes, setVibes] = useState([]);
+  const [selectedVibe, setSelectedVibe] = useState(null); // Track selected vibe
   
   useEffect(() => {
     const fetchVibes = async () => {
@@ -29,13 +21,18 @@ const VibeSelection = ({ onVibeSelect }) => {
     fetchVibes();
   }, []);
 
+  const handleVibeClick = (vibe) => {
+    setSelectedVibe((prev) => (prev === vibe.id ? null : vibe.id)); // Set selected vibe
+    onVibeSelect(vibe.name);  // Keep existing behavior
+  };
+
   return (
     <div className="vibe-grid">
       {vibes.map((vibe) => (
         <button
           key={vibe.id}
-          className={`vibe-card ${vibe.colorClass}`}
-          onClick={() => onVibeSelect(vibe.name)}
+          className={`vibe-card ${selectedVibe === vibe.id ? `vibe-${vibe.name.toLowerCase().split(' ')[0]}` : ''}`}
+          onClick={() => handleVibeClick(vibe)}
         >
           <span className="vibe-emoji">{vibe.emoji}</span>
           <p className="vibe-name">{vibe.name}</p>
