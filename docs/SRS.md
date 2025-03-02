@@ -60,7 +60,7 @@ The Vibes-Based Meal Planner is a full-stack web application that helps users pl
 ### **Frontend:**
 - React.js (Vite for fast development)
 - React Router for navigation
-- Axios for API calls
+- Fetch for API calls
 
 ### **Backend:**
 - Express.js (Node.js framework)
