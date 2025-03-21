@@ -19,8 +19,10 @@ const vibeKeywordMap = {
 
 export const fetchRecipesByVibe = async (vibe) => {
 	try {
-        let searchQuery = vibe;
-        let response = await fetch(`${BASE_URL}?query=${searchQuery}&sort=random&apiKey=${API_KEY}`);
+        const searchQuery = vibe;
+        let response = await fetch(
+            `${BASE_URL}?query=${searchQuery}&sort=random&apiKey=${API_KEY}&number=10`
+        );
 
         if (!response.ok) {
 			throw new Error(`Failed to fetch recipes: ${response.status}`);
