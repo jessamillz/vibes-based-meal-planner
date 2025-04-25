@@ -1,8 +1,8 @@
 # Software Requirements Specification (SRS)
 ## Vibes-Based Meal Planner
-### Version 1.0
+### Version 0.1
 ### Author: [Jessica Miller]
-### Last Updated: [February 17, 2025]
+### Last Updated: [April 25, 2025]
 
 ---
 
@@ -34,19 +34,20 @@ The Vibes-Based Meal Planner is a full-stack web application that helps users pl
 
 ## **2. Functional Requirements**
 ### **2.1 Core Features (MVP)**
-✅ Users can select a mood/vibe, and the app suggests meals accordingly.  
-✅ Fetch meal data using **Spoonacular API** based on predefined vibe categories.  
-✅ Weather-based meal recommendations using **OpenWeather API**.  
-✅ Users can schedule meals manually.  
-✅ Users can add take-out and restaurant meals with custom notes.  
-✅ Basic Google Calendar integration for syncing planned meals.  
+✅ User shall select a mood/vibe, and the app shall suggest meals accordingly.  
+✅ The app shall fetch meal data using **Spoonacular API** based on predefined vibe categories.  
+✅ The app shall allow weather-based meal recommendations using **OpenWeather API**.  
+✅ 
 
 ### **2.2 Future Enhancements**
-💡 Shared meal planning (invite spouse, friends, etc.).  
-💡 User accounts & authentication (save preferences, history).  
-💡 AI-based personalized recommendations based on user choices.  
-💡 Flip a coin to pick between two options.  
-💡 Add a carousel-style swipe, or  
+💡 User shall have the option to schedule meals manually. 
+💡 User shall be able to add take-out and restaurant meals with custom notes.  
+💡 The app shall have basic Google Calendar integration for syncing planned meals.  
+💡 The app shall allow shared meal planning (invite spouse, friends, etc.).  
+💡 The app shall allow offer account creation & authentication (save preferences, history).  
+💡 The app shall integrate AI-based personalized recommendations based on user choices.  
+💡 The user shall be able to flip a coin to pick between two options.  
+💡 The app shall have a carousel-style swipe, or  
 ---💡 Show “More Recipes” button if user wants to expand all
 
 ---
@@ -83,18 +84,19 @@ The Vibes-Based Meal Planner is a full-stack web application that helps users pl
 ---
 
 ## **5. Development Timeline**
-### **Phase 1 (MVP - Core Features) (Feb - Early March)**
+### **Phase 1 (MVP - Core Features) (Feb - May)**
 - ✅ Set up repo, initialize React and Express.
 - ✅ Fetch and display meals from Spoonacular API based on vibe selection.
 - ✅ Integrate OpenWeather API for weather-based meal suggestions.
-- ✅ Allow users to schedule meals and add take-out options.
 
-### **Phase 2 (Enhancements & Backend Refinement) (March - Early April)**
+
+### **Phase 2 (Enhancements & Backend Refinement) (May - ?)**
+- ✅ Allow users to schedule meals and add take-out options.
 - ✅ Connect backend to PostgreSQL (via Supabase) for structured meal storage.
 - ✅ Improve API calls and optimize response handling.
 - ✅ Add Google Calendar syncing.
 
-### **Phase 3 (Final Features & Portfolio Polish) (April - May)**
+### **Phase 3 (Final Features & Portfolio Polish) (? - ?)**
 - ✅ UI/UX improvements and mobile optimization.
 - ✅ Test, debug, and finalize all core features.
 - ✅ Deploy on Netlify (Frontend) and Render (Backend).

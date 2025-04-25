@@ -41,7 +41,7 @@ const VibeSelection = ({ onVibeSelect }) => {
    /**
    * handleVibeClick - Handles Vibe Selection
    * ----------------------------------------
-   * - Toggles the selected vibe.
+   * - Toggles the selected vibe.	<div className="vibe-grid">
    * - Applies specific styling based on selection.
    * - Calls the parent component's onVibeSelect callback.
    */
